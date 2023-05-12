@@ -1,7 +1,10 @@
+import { Box } from "@mui/material";
+import SimpleBottomNavigation from "../Components/BottomNavigation";
+
 export default function HtmlPage() {
   const myVariable = 3;
   return (
-    <div style={style.wrapper}>
+    <div id="wrapper">
       <div>
         <h1>html로 작성된 react app 라우트에요</h1>
         <div>
@@ -22,7 +25,7 @@ export default function HtmlPage() {
             react는 함수형 프로그래밍 언어로, 하나의 함수는 한 개의 태그
             덩어리를 반환해요
             <br />
-            <span style={style.bold}>
+            <span style={styles.bold}>
               꼭 기억하세요 : 한 개의 함수는 한 개의 덩어리를 반환해야 해요
             </span>
           </p>
@@ -46,18 +49,20 @@ export default function HtmlPage() {
           </p>
         </div>
       </div>
+      <Box sx={styles.bottom}>
+        <SimpleBottomNavigation selected={"html"} />
+      </Box>
     </div>
   );
 }
 
-const style = {
-  wrapper: {
-    width: "100vw",
-    height: "100vh",
-    padding: 10,
-    boxSizing: "border-box",
-  },
+const styles = {
   bold: {
     fontWeight: "bold",
+  },
+  bottom: {
+    position: "absolute",
+    bottom: 0,
+    width: "100%",
   },
 };
